@@ -30,7 +30,7 @@ def write_clipboard(text):
     subprocess.Popen(WRITE_CLIPBOARD_COMMAND.format(text=text), shell=True)
 
 def download_link(path):
-    return DOWNLOAD_ROOT + os.path.basename(path)
+    return DOWNLOAD_ROOT + os.path.basename(path).replace(' ','%20')
 
 def copy_file(src, dst=IMAGES_DIR):
     if os.path.isfile(src):

@@ -69,11 +69,11 @@ if __name__ == '__main__':
 
     parser.add_argument('--source', '-s', action='store', default='', type=str,
                         help='Specify path of image\n'
-                        'If not specify, it is the latest screenshot\n')
+                        'If not specify, it is the latest screenshot(path in clipboard)\n')
     parser.add_argument('--update', '-u', action='store_true',
-                        help=f'Update all of images in {IMAGES_DIR} to github')
+                        help=f'Update all of images in IMAGES_DIR to github')
     parser.add_argument('--out', '-o', action='store_true',
-                        help='Wether copying the download link of image to clipboard')
+                        help='Whether or not copying the download link of image to clipboard')
     args = parser.parse_args()
 
     cli(source=args.source, update=args.update, out=args.out)

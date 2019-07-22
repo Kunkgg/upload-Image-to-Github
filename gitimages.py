@@ -35,7 +35,7 @@ def download_link(path):
 def copy_file(src, dst=IMAGES_DIR):
     if os.path.isfile(src):
         return shutil.copy(src, dst)
-    raise FileNotFoundError
+    raise FileNotFoundError('Input is not a file.')
 
 def git_update(path):
     os.chdir(path)
@@ -50,7 +50,7 @@ def cli(source, update, out):
         if update:
             git_update(IMAGES_DIR)
             return
-        raise FileNotFoundError
+        raise FileNotFoundError('Input is not a file.')
     
     if os.path.dirname(source) != IMAGES_DIR:
         copy_file(source)
